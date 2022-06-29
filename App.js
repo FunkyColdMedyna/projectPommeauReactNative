@@ -5,7 +5,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Hello World!</Text>
-      <Text>Please pardon our appearance while under construction</Text>
+      <Text>Please pardon our appearance while under construction. This is some test to see if the branch switch is correct.</Text>
       <StatusBar style="auto" />
     </View>
   );
