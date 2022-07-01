@@ -1,15 +1,10 @@
 // array of events to display 
-import Apple7 from '../../app/assets/images/apple7.png';
-import Apple8 from '../../app/assets/images/apple8.png';
-import Apple9 from '../../app/assets/images/apple9.png';
-import Apple10 from '../../app/assets/images/apple10.png';
-
 
 export const EVENTS = [
     {
         id: 0,
         name: 'Event1',
-        image: Apple7,
+        image: require('../assets/images/apple7.png'),
         featured: true,
         time: '7:00',
         date: '06/14/2022',
@@ -19,7 +14,7 @@ export const EVENTS = [
     {
         id: 1,
         name: 'Event2',
-        image: Apple8,
+        image: require('../assets/images/apple8.png'),
         featured: false,
         time: '8:00',
         date: '06/15/2022',
@@ -29,7 +24,7 @@ export const EVENTS = [
     {
         id: 2,
         name: 'Event3',
-        image: Apple9,
+        image: require('../assets/images/apple9.png'),
         featured: false,
         time: '9:00',
         date: '06/16/2022',
@@ -39,7 +34,7 @@ export const EVENTS = [
     {
         id: 3,
         name: 'Event4',
-        image: Apple10,
+        image: require('../assets/images/apple10.png'),
         featured: false,
         time: '10:00',
         date: '06/17/2022',
@@ -49,7 +44,7 @@ export const EVENTS = [
     {
         id: 4,
         name: 'Event5',
-        image: Apple7,
+        image: require('../assets/images/ApplE.jpeg'),
         featured: false,
         time: '11:00',
         date: '06/18/2022',

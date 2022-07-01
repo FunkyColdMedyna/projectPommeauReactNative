@@ -1,10 +1,50 @@
-import { Text, View } from 'react-native';
+import { useState } from 'react';
+import { ScrollView, Text, View } from 'react-native';
+import { Card } from 'react-native-elements';
+import { PRODUCERS } from '../shared/PRODUCERS';
+import { EVENTS } from '../shared/EVENTS';
+import { MARKET } from '../shared/MARKET';
+
+const FeaturedItem = ({ item }) => {
+    if (item){
+        return(
+            <Card containerStyle={{ padding: 0 }}>
+                <Card.Image source={item.image}>
+                    <View style={{ justifyContent: 'center', flex: 1}}>
+                        <Text
+                            style={{
+                                color: 'white',
+                                textAlign: 'center',
+                                fontSize: 20
+                            }}
+                        >
+                            {item.name}
+                        </Text>
+                    </View>
+                </Card.Image>
+                <Text stle={{ margin: 20 }}>{item.description}</Text>
+            </Card>
+        )
+    }
+    return <View />
+}
 
 const HomeScreen = () => {
+    const [producers, setProducers] = useState(PRODUCERS);
+    const [events, setEvents] = useState(EVENTS);
+    const [markets, setMarkets] = useState(MARKET);
+
+    const featProducer = producers.find((item) => item.featured);
+    const featEvent = events.find((item) => item.featured);
+    const featMarket = markets.find((item) => item.featured);
+
     return(
-        <View>
-            <Text>Home Screen</Text>
-        </View>
+        // scrollview = lazy loading - only shows featured items from each category. Flatflist should be used for longer lists //
+        <ScrollView>
+            <FeaturedItem item={featProducer} />
+            <FeaturedItem item={featEvent} />
+            <FeaturedItem item={featMarket} />
+        </ScrollView>
     )
 }
 
