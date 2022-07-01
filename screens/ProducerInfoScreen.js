@@ -1,7 +1,8 @@
 import RenderProducer from '../features/producers/RenderProducer';
 
-const ProducerInfoScreen = (props) => {
-    return <RenderProducer producer= {props.producer} />;
+const ProducerInfoScreen = ({ route }) => {
+    const { producer } = route.params;
+    return <RenderProducer producer= {producer} />;
 };
 
 export default ProducerInfoScreen;
