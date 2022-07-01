@@ -1,22 +1,37 @@
-// import { useState } from 'react';
 import { Platform, View } from 'react-native';
 import Constants from 'expo-constants';
-// import { PRODUCERS } from '../shared/PRODUCERS';
 import DirectoryScreen from './DirectoryScreen';
 import ProducerInfoScreen from './ProducerInfoScreen';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import HomeScreen from './HomeScreen';
+
+const Drawer = createDrawerNavigator();
+
+const screenOptions = {
+    headerTintColor: '#fff',
+    headerStyle: { backgroundColor: 'orange'}
+};
+
+const HomeNavigator = () => {
+    const Stack = createStackNavigator();
+    return(
+        <Stack.Navigator screenOptions={screenOptions}>
+            <Stack.Screen 
+                name='Home'
+                component={HomeScreen}
+                options={{ title: 'Home' }}
+            />
+        </Stack.Navigator>
+    )
+}
 
 const DirectoryNavigator = () => {
     const Stack = createStackNavigator();
     return (
         <Stack.Navigator
             initialRouteName='Directory'
-            screenOptions={{
-                headerStyle: {
-                    backgroundColor: 'orange'
-                },
-                headerTintColor: '#fff'
-            }}
+            screenOptions={screenOptions}
         >
             <Stack.Screen 
                 name= 'Directory'
@@ -35,9 +50,6 @@ const DirectoryNavigator = () => {
 }
 
 const Main = () => {
-    // const [producers, setProducers] = useState(PRODUCERS);
-    // const [selectedProducerId, setSelectedProducerId] = useState();
-
     return (
         <View 
             style={{ 
@@ -45,7 +57,21 @@ const Main = () => {
                 paddingTop: Platform.os === 'ios' ? 0 : Constants.statusBarHeight 
             }}
         >
-            <DirectoryNavigator />
+            <Drawer.Navigator
+                initialRouteName='Home'
+                drawerStyle={{ backgroundColor: '#9ad7f6'}}
+            >
+                <Drawer.Screen 
+                    name='Home'
+                    component={HomeNavigator}
+                    options={{ title: 'Home'}}
+                />
+                <Drawer.Screen 
+                    name='Directory'
+                    component={DirectoryNavigator}
+                    options={{ title: 'Producer Directory'}}
+                />
+            </Drawer.Navigator>
         </View>
     )
 };
