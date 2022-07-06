@@ -25,7 +25,8 @@
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
     "react-native-web": "0.17.7",
-    "@react-navigation/drawer": "5.12.9"
+    "@react-navigation/drawer": "5.12.9",
+    "expo-mail-composer": "~11.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
