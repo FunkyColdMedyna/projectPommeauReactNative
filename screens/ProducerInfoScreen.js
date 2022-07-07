@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import RenderProducer from '../features/producers/RenderProducer';
-import {COMMENTS} from '../shared/COMMENTS'; 
+import { COMMENTS } from '../shared/COMMENTS'; 
 
 const ProducerInfoScreen = ({ route }) => {
     const { producer } = route.params;

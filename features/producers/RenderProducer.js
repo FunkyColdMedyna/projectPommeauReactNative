@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import { Card, Icon } from "react-native-elements";
 
-const RenderProducer = ({ props }) => {
+const RenderProducer = (props) => {
   const { producer } = props;
 
   if (producer) {
@@ -22,16 +22,16 @@ const RenderProducer = ({ props }) => {
         </Card.Image>
         <Text style={{ margin: 20 }}>{producer.description}</Text>
         <Icon
-          name={props.isFavorite ? 'heart' : 'heart-o'}
-          type='font-awesome'
-          color='#f50'
+          name={props.isFavorite ? "heart" : "heart-o"}
+          type="font-awesome"
+          color="#f50"
           raised
           reverse
           onPress={() =>
             props.isFavorite
               ? console.log('Already set as favorite')
               : props.markFavorite()
-          }
+            }
         />
       </Card>
     );
