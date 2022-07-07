@@ -49,17 +49,17 @@ const ProducerInfoScreen = ({ route }) => {
 const styles = StyleSheet.create({
     commentsTitle: {
         textAlign: 'center',
-        backgroundColor: 'blue',
+        backgroundColor: '#4b9cd1',
         fontSize: 16,
         fontWeight: 'bold',
-        color: 'orange',
+        color: '#fff',
         padding: 10, 
         paddingTop: 30
     },
     commentItem: {
         paddingVertical: 10,
         paddingHorizontal: 20,
-        backgroundColor: 'orange'
+        backgroundColor: '#d1804b'
     }
 })
 
