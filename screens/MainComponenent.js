@@ -81,7 +81,7 @@ const EventsNavigator = () => {
             <Stack.Screen 
                 name='Events'
                 component={EventsScreen}
-                options={({ navigation}) => ({
+                options={({ navigation }) => ({
                     title: 'Events',
                     headerLeft: () => (
                         <Icon
@@ -261,7 +261,7 @@ const styles = StyleSheet.create({
     stackIcon: {
         marginLeft: 10,
         color: '#fff',
-        fontSize: 24
+        fontSize: 24,
     }
 });
 
