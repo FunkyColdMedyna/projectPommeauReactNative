@@ -17,7 +17,7 @@ export const COMMENTS = [
     },
     {
       id: 2,
-      producerId: 0,
+      producerId: 2,
       rating: 4,
       text: "Do not feed the wildlife. They will follow you back to the tent.",
       author: "Amy Keophilavong",
@@ -49,7 +49,7 @@ export const COMMENTS = [
     },
     {
       id: 6,
-      producerId: 1,
+      producerId: 3,
       rating: 5,
       text: "I caught a world-record-breaking trout here on my last visit.",
       author: "McKenzie Sebastian",
@@ -57,7 +57,7 @@ export const COMMENTS = [
     },
     {
       id: 7,
-      producerId: 1,
+      producerId: 8,
       rating: 5,
       text: "The campground was beautiful, but the bugs could bite sometimes.",
       author: "Brennen Ech",
@@ -65,7 +65,7 @@ export const COMMENTS = [
     },
     {
       id: 8,
-      producerId: 1,
+      producerId: 3,
       rating: 4,
       text: "Love the river but I didn't catch any fish.",
       author: "Amy Keophilavong",
@@ -81,7 +81,7 @@ export const COMMENTS = [
     },
     {
       id: 10,
-      producerId: 2,
+      producerId: 4,
       rating: 5,
       text: "The Frozen Tundra is great place for family and friends camping!",
       author: "Olaf the Snowman",
@@ -97,7 +97,7 @@ export const COMMENTS = [
     },
     {
       id: 12,
-      producerId: 2,
+      producerId: 6,
       rating: 5,
       text: "The stars at night were a revelation!",
       author: "Ann Dabramov",
@@ -105,7 +105,7 @@ export const COMMENTS = [
     },
     {
       id: 13,
-      producerId: 2,
+      producerId: 5,
       rating: 4,
       text: "Great scenic hiking trails but it was challenging to go up the mountain.",
       author: "Amy Keophilavong",
@@ -113,7 +113,7 @@ export const COMMENTS = [
     },
     {
       id: 14,
-      producerId: 2,
+      producerId: 7,
       rating: 5,
       text: "Perfect scenery for a smoked kipper breakfast with friends!",
       author: "Dave Lister",
@@ -121,7 +121,7 @@ export const COMMENTS = [
     },
     {
       id: 15,
-      producerId: 3,
+      producerId: 5,
       rating: 4,
       text: "Just remember a bear can run and climb faster than you...",
       author: "Markell Richards",
@@ -129,7 +129,7 @@ export const COMMENTS = [
     },
     {
       id: 16,
-      producerId: 3,
+      producerId: 4,
       rating: 5,
       text: "Excellent site to recharge from the city.",
       author: "Amy Keophilavong",
@@ -137,7 +137,7 @@ export const COMMENTS = [
     },
     {
       id: 17,
-      producerId: 3,
+      producerId: 6,
       rating: 5,
       text: "What a magnificent view!",
       author: "Tinus Lorvaldes",
@@ -145,7 +145,7 @@ export const COMMENTS = [
     },
     {
       id: 18,
-      producerId: 3,
+      producerId: 7,
       rating: 4,
       text: "The sites are huge! We felt like we were in the middle of nowhere, in a good way.",
       author: "Chloe Haskins",
@@ -153,7 +153,7 @@ export const COMMENTS = [
     },
     {
       id: 19,
-      producerId: 3,
+      producerId: 5,
       rating: 5,
       text: "The photos don't do justice to the beauty of this place.",
       author: "Minae Lee",

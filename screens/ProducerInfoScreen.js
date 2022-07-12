@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import RenderProducer from '../features/producers/RenderProducer';
-import {COMMENTS} from '../shared/COMMENTS'; 
+import { COMMENTS } from '../shared/COMMENTS'; 
 
 const ProducerInfoScreen = ({ route }) => {
     const { producer } = route.params;
@@ -49,17 +49,17 @@ const ProducerInfoScreen = ({ route }) => {
 const styles = StyleSheet.create({
     commentsTitle: {
         textAlign: 'center',
-        backgroundColor: 'blue',
+        backgroundColor: '#4b9cd1',
         fontSize: 16,
         fontWeight: 'bold',
-        color: 'orange',
+        color: '#fff',
         padding: 10, 
         paddingTop: 30
     },
     commentItem: {
         paddingVertical: 10,
         paddingHorizontal: 20,
-        backgroundColor: 'orange'
+        backgroundColor: '#d1804b'
     }
 })
 

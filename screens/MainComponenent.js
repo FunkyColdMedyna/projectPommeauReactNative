@@ -1,20 +1,21 @@
-import { Platform, View, StyleSheet } from 'react-native';
+import { Platform, View, StyleSheet, Image, Text } from 'react-native';
 import Constants from 'expo-constants';
 import DirectoryScreen from './DirectoryScreen';
 import ProducerInfoScreen from './ProducerInfoScreen';
 import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 import HomeScreen from './HomeScreen';
 import AboutScreen from './AboutScreen';
 import ContactScreen from './ContactScreen';
 import EventsScreen from './EventsScreen';
 import { Icon } from 'react-native-elements';
+import Apple9 from '../assets/images/apple9.png';
 
 const Drawer = createDrawerNavigator();
 
 const screenOptions = {
     headerTintColor: '#fff',
-    headerStyle: { backgroundColor: 'orange'},
+    headerStyle: { backgroundColor: '#d1804b'},
     padding: 6
 };
 
@@ -81,7 +82,7 @@ const EventsNavigator = () => {
             <Stack.Screen 
                 name='Events'
                 component={EventsScreen}
-                options={({ navigation}) => ({
+                options={({ navigation }) => ({
                     title: 'Events',
                     headerLeft: () => (
                         <Icon
@@ -142,6 +143,20 @@ const ContactNavigator = () => {
     );
 };
 
+const CustomDrawerContent = (props) => (
+    <DrawerContentScrollView {...props} >
+        <View style={styles.drawerHeader}>
+            <View style={{ flex: 1 }}>
+                <Image source={Apple9} style={styles.drawerImage} />
+            </View>
+            <View style={{ flex: 2 }}>
+                <Text style={styles.drawerHeaderText}>Project Pommeau</Text>
+            </View>
+        </View>
+        <DrawerItemList {...props} labelStyle={{ fontWeight: 'bold' }} />
+    </DrawerContentScrollView>
+)
+
 const Main = () => {
     return (
         <View 
@@ -152,6 +167,7 @@ const Main = () => {
         >
             <Drawer.Navigator
                 initialRouteName='Home'
+                drawerContent={CustomDrawerContent}
                 drawerStyle={{ backgroundColor: '#9ad7f6'}}
             >
                 <Drawer.Screen 
@@ -241,7 +257,7 @@ const Main = () => {
 
 const styles = StyleSheet.create({
     drawerHeader: {
-        backgroundColor: '#5637DD',
+        backgroundColor: '#4b9cd1',
         height: 140,
         alignItems: 'center',
         justifyContent: 'center',
@@ -261,7 +277,7 @@ const styles = StyleSheet.create({
     stackIcon: {
         marginLeft: 10,
         color: '#fff',
-        fontSize: 24
+        fontSize: 24,
     }
 });
 

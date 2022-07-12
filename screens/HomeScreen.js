@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { FlatList, ScrollView, Text, View } from 'react-native';
 import { Card } from 'react-native-elements';
 import { PRODUCERS } from '../shared/PRODUCERS';
 import { EVENTS } from '../shared/EVENTS';
 import { MARKET } from '../shared/MARKET';
+import { ARTICLES } from '../shared/ARTICLES';
 
 const FeaturedItem = ({ item }) => {
     if (item){
@@ -33,17 +34,20 @@ const HomeScreen = () => {
     const [producers, setProducers] = useState(PRODUCERS);
     const [events, setEvents] = useState(EVENTS);
     const [markets, setMarkets] = useState(MARKET);
+    const [articles, setArticles] = useState(ARTICLES);
 
     const featProducer = producers.find((item) => item.featured);
     const featEvent = events.find((item) => item.featured);
     const featMarket = markets.find((item) => item.featured);
+    const featArticle = articles.find((item) => item.featured);
 
     return(
-        // scrollview = lazy loading - only shows featured items from each category. Flatflist should be used for longer lists //
+        // scrollview = lazy loading - only shows featured items from each category. Flatlist should be used for longer lists //
         <ScrollView>
             <FeaturedItem item={featProducer} />
             <FeaturedItem item={featEvent} />
             <FeaturedItem item={featMarket} />
+            <FeaturedItem item={featArticle} />
         </ScrollView>
     )
 }
