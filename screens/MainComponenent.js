@@ -10,6 +10,13 @@ import ContactScreen from './ContactScreen';
 import EventsScreen from './EventsScreen';
 import { Icon } from 'react-native-elements';
 import Apple9 from '../assets/images/apple9.png';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchArticles } from '../features/articles/articlesSlice';
+import { fetchComments } from '../features/comments/commentsSlice';
+import { fetchEvents } from '../features/events/eventsSlice';
+import { fetchProducers } from '../features/producers/producersSlice';
+import { fetchMarket } from '../features/market/marketSlice';
 
 const Drawer = createDrawerNavigator();
 
@@ -158,6 +165,16 @@ const CustomDrawerContent = (props) => (
 )
 
 const Main = () => {
+const dispatch = useDispatch();
+
+useEffect(() => {
+    dispatch(fetchArticles());
+    dispatch(fetchComments());
+    dispatch(fetchEvents());
+    dispatch(fetchMarket());
+    dispatch(fetchProducers());
+}, [dispatch]);
+
     return (
         <View 
             style={{ 
