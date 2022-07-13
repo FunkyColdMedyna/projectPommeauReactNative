@@ -26,7 +26,10 @@
     "react-native-reanimated": "^2.2.0",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
-    "react-native-web": "0.17.7"
+    "react-native-web": "0.17.7",
+    "redux": "4.1.2",
+    "react-redux": "7.2.6",
+    "@reduxjs/toolkit": "1.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
