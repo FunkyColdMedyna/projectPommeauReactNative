@@ -1,10 +1,6 @@
-// import { useState } from 'react';
-import { FlatList, ScrollView, Text, View } from 'react-native';
+
+import { ScrollView, Text, View } from 'react-native';
 import { Card } from 'react-native-elements';
-// import { PRODUCERS } from '../shared/PRODUCERS';
-// import { EVENTS } from '../shared/EVENTS';
-// import { MARKET } from '../shared/MARKET';
-// import { ARTICLES } from '../shared/ARTICLES';
 import { useSelector } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
 
@@ -33,24 +29,23 @@ const FeaturedItem = ({ item }) => {
 }
 
 const HomeScreen = () => {
-    const articles = useSelector((state) => state.articles);
-    const events = useSelector((state) => state.events);
-    const markets = useSelector((state) => state.market);
-    const producers = useSelector((state) => state.producers);
+    const producers = useSelector((state) => state.producers.producers);
+    // const articles = useSelector((state) => state.articles);
+    // const events = useSelector((state) => state.events);
+    // const markets = useSelector((state) => state.market);
     
 
-    const featProducer = producers.producersArray.find((item) => item.featured);
-    const featEvent = events.eventsArray.find((item) => item.featured);
-    const featMarket = markets.marketArray.find((item) => item.featured);
-    const featArticle = articles.articlesArray.find((item) => item.featured);
+    const featProducer = producers.find((item) => item.featured)   
+     // const featEvent = events.eventsArray.find((item) => item.featured);
+    // const featMarket = markets.marketArray.find((item) => item.featured);
+    // const featArticle = articles.articlesArray.find((item) => item.featured);
 
     return(
-        // scrollview = lazy loading - only shows featured items from each category. Flatlist should be used for longer lists //
         <ScrollView>
             <FeaturedItem item={featProducer} />
-            <FeaturedItem item={featEvent} />
+            {/* <FeaturedItem item={featEvent} />
             <FeaturedItem item={featMarket} />
-            <FeaturedItem item={featArticle} />
+            <FeaturedItem item={featArticle} /> */}
         </ScrollView>
     )
 }
