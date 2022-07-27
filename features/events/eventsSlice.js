@@ -5,13 +5,27 @@ export const fetchEvents = createAsyncThunk(
     'events/fetchEvents',
     async () => {
         const response = await fetch(baseUrl + 'events');
+        if(!response.ok) {
+            return Promise.reject(response.status);
+        }
         return response.json();
     }
 );
 
+const initialState = {
+    isLoading: true, 
+    errMess: null, 
+    events: [],
+    name: '',
+    id: null,
+    description: '',
+    featured: false, 
+    comments: ''
+}
+
 const eventsSlice = createSlice({
     name: 'events',
-    initialState: { isLoading: true, errMess: null, eventsArray: [] },
+    initialState,
     reducers: {},
     extraReducers: {
         [fetchEvents.pending]: (state) => {
@@ -20,7 +34,7 @@ const eventsSlice = createSlice({
         [fetchEvents.fulfilled]: (state, action) => {
             state.isLoading = false;
             state.errMess = null;
-            state.partnersArray = action.payload;
+            state.events = action.payload;
         },
         [fetchEvents.rejected]: (state, action) => {
             state.isLoading = false;
