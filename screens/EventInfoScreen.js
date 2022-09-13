@@ -5,6 +5,7 @@ import { COMMENTS } from '../shared/COMMENTS';
 
 const EventInfoScreen = ({ route }) => {
     const { event } = route.params;
+    // test
 
     const [comments, setComments] = useState(COMMENTS);
     const [favorite, setFavorite] = useState(false);
