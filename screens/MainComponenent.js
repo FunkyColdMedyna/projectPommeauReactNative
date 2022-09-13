@@ -8,6 +8,7 @@ import HomeScreen from './HomeScreen';
 import AboutScreen from './AboutScreen';
 import ContactScreen from './ContactScreen';
 import EventsScreen from './EventsScreen';
+import EventInfoScreen from './EventInfoScreen';
 import { Icon } from 'react-native-elements';
 import Apple9 from '../assets/images/apple9.png';
 import { useDispatch } from 'react-redux';
@@ -17,6 +18,7 @@ import { fetchComments } from '../features/comments/commentsSlice';
 import { fetchEvents } from '../features/events/eventsSlice';
 import { fetchProducers } from '../features/producers/producersSlice';
 import { fetchMarket } from '../features/market/marketSlice';
+
 
 const Drawer = createDrawerNavigator();
 
@@ -99,6 +101,13 @@ const EventsNavigator = () => {
                             onPress={() => navigation.toggleDrawer()}
                         />
                     )
+                })}
+            />
+            <Stack.Screen 
+                name= 'EventInfo'
+                component={EventInfoScreen}
+                options={({ route }) => ({
+                    title: route.params.event.name
                 })}
             />
         </Stack.Navigator>
