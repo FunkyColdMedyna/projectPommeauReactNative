@@ -2,6 +2,7 @@ import { Platform, View, StyleSheet, Image, Text } from 'react-native';
 import Constants from 'expo-constants';
 import DirectoryScreen from './DirectoryScreen';
 import ProducerInfoScreen from './ProducerInfoScreen';
+import EventInfoScreen from './EventInfoScreen';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 import HomeScreen from './HomeScreen';
@@ -101,6 +102,13 @@ const EventsNavigator = () => {
                     )
                 })}
             />
+        <Stack.Screen 
+                name= 'EventInfo'
+                component={EventInfoScreen}
+                options={({ route }) => ({
+                    title: route.params.event.name
+                })}
+            />    
         </Stack.Navigator>
     );
 };

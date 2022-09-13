@@ -9,7 +9,7 @@ const EventsScreen = ({ navigation }) => {
 
     const renderEventItem = ({ item: event }) => {
         return(
-            <ListItem onPress={() => navigation.navigate('Events', { event })}>
+            <ListItem onPress={() => navigation.navigate('EventInfo', { event })}>
                 <Avatar source={event.image} rounded />
                 <ListItem.Content>
                     <ListItem.Title>{event.name}</ListItem.Title>
