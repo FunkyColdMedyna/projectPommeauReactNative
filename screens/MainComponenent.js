@@ -9,6 +9,7 @@ import HomeScreen from './HomeScreen';
 import AboutScreen from './AboutScreen';
 import ContactScreen from './ContactScreen';
 import EventsScreen from './EventsScreen';
+import ArticlesScreen from './ArticlesScreen';
 import { Icon } from 'react-native-elements';
 import Apple9 from '../assets/images/apple9.png';
 import { useDispatch } from 'react-redux';
@@ -109,6 +110,29 @@ const EventsNavigator = () => {
                     title: route.params.event.name
                 })}
             />    
+        </Stack.Navigator>
+    );
+};
+
+const ArticlesNavigator = () => {
+    const Stack = createStackNavigator();
+    return(
+        <Stack.Navigator screenOptions={screenOptions}>
+            <Stack.Screen 
+                name='Articles'
+                component={ArticlesScreen}
+                options={({ navigation }) => ({
+                    title: 'Articles',
+                    headerLeft: () => (
+                        <Icon
+                            name='newspaper-o'
+                            type='font-awesome'
+                            iconStyle={styles.stackIcon}
+                            onPress={() => navigation.toggleDrawer()}
+                        />
+                    )
+                })}
+            />
         </Stack.Navigator>
     );
 };
@@ -235,6 +259,22 @@ useEffect(() => {
                         drawerIcon: ({ color }) => (
                             <Icon
                                 name='gift'
+                                type='font-awesome'
+                                size={24}
+                                iconStyle={{ width: 24 }}
+                                color={color}
+                            />
+                        )
+                    }}
+                />
+                <Drawer.Screen 
+                    name='Articles'
+                    component={ArticlesNavigator}
+                    options={{
+                        title: 'Articles',
+                        drawerIcon: ({ color }) => (
+                            <Icon
+                                name='newspaper-o'
                                 type='font-awesome'
                                 size={24}
                                 iconStyle={{ width: 24 }}

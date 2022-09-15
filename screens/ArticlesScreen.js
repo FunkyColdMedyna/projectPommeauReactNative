@@ -9,11 +9,12 @@ const ArticlesScreen = ({ navigation }) => {
 
     const renderArticleItem = ({ item: article }) => {
         return(
-            <ListItem onPress={() => navigation.navigate('ArticleInfo', { article })}>
+            <ListItem >
                 {/* <Avatar source={article.image} rounded /> */}
                 <ListItem.Content>
                     <ListItem.Title>{article.name}</ListItem.Title>
                     <ListItem.Subtitle>{article.author}</ListItem.Subtitle>
+                    <ListItem.Subtitle>{article.date}</ListItem.Subtitle>
                 </ListItem.Content>
             </ListItem>
         )
