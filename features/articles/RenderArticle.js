@@ -7,11 +7,10 @@ const RenderArticle = (props) => {
     if (article) {
         return (
             <Card containerStyle={styles.cardContainer}>
-                <Card.Body>
                     <View style={{ justifyContent: "center", flex: 1 }}>
                         <Text
                             style={{
-                                color: "white",
+                                color: "black",
                                 textAlign: "center",
                                 fontSize: 20,
                             }}
@@ -19,8 +18,8 @@ const RenderArticle = (props) => {
                             {article.name}
                         </Text>
                     </View>
-                </Card.Body>
-                <Text style={{ margin: 20 }}>{article.name}</Text>
+                <Text style={{ margin: 20 }}>{article.text}</Text>
+                <Text style={{ margin: 20 }}>{article.author}</Text>
                 <Icon
                     name={props.isFavorite ? "heart" : "heart-o"}
                     type="font-awesome"

@@ -9,7 +9,7 @@ const ArticlesScreen = ({ navigation }) => {
 
     const renderArticleItem = ({ item: article }) => {
         return(
-            <ListItem >
+            <ListItem onPress={() => navigation.navigate('ArticleInfo', { article })}>
                 {/* <Avatar source={article.image} rounded /> */}
                 <ListItem.Content>
                     <ListItem.Title>{article.name}</ListItem.Title>

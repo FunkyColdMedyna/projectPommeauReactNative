@@ -10,6 +10,7 @@ import AboutScreen from './AboutScreen';
 import ContactScreen from './ContactScreen';
 import EventsScreen from './EventsScreen';
 import ArticlesScreen from './ArticlesScreen';
+import ArticleInfoScreen from './ArticleInfoScreen';
 import { Icon } from 'react-native-elements';
 import Apple9 from '../assets/images/apple9.png';
 import { useDispatch } from 'react-redux';
@@ -133,6 +134,13 @@ const ArticlesNavigator = () => {
                     )
                 })}
             />
+             <Stack.Screen 
+                name= 'ArticleInfo'
+                component={ArticleInfoScreen}
+                options={({ route }) => ({
+                    title: route.params.article.name
+                })}
+            /> 
         </Stack.Navigator>
     );
 };
