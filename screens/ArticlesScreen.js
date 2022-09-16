@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FlatList } from 'react-native';
-import { Avatar, ListItem } from 'react-native-elements';
-import { ARTICLES, Articles } from '../shared/ARTICLES';
+import { ListItem } from 'react-native-elements';
+import { ARTICLES } from '../shared/ARTICLES';
 
 
 const ArticlesScreen = ({ navigation }) => {
