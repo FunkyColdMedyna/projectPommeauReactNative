@@ -38,6 +38,7 @@ const ArticleInfoScreen = ({ route }) => {
                         article={article} 
                         isFavorite={favorite}
                         markFavorite={() => setFavorite(true)}
+                        unmarkFavorite={() => setFavorite(false)}  
                     />
                     <Text style={styles.commentsTitle}>Comments</Text>
                 </>
