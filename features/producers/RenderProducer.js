@@ -29,7 +29,7 @@ const RenderProducer = (props) => {
           reverse
           onPress={() =>
             props.isFavorite
-              ? console.log('Already set as favorite')
+              ? props.unmarkFavorite()
               : props.markFavorite()
             }
         />

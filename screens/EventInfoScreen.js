@@ -38,6 +38,7 @@ const EventInfoScreen = ({ route }) => {
                         event={event} 
                         isFavorite={favorite}
                         markFavorite={() => setFavorite(true)}
+                        unmarkFavorite={() => setFavorite(false)}  
                     />
                     <Text style={styles.commentsTitle}>Comments</Text>
                 </>

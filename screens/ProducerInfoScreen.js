@@ -38,6 +38,7 @@ const ProducerInfoScreen = ({ route }) => {
                         producer={producer} 
                         isFavorite={favorite}
                         markFavorite={() => setFavorite(true)}
+                        unmarkFavorite={() => setFavorite(false)}  
                     />
                     <Text style={styles.commentsTitle}>Comments</Text>
                 </>
