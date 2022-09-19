@@ -22,7 +22,7 @@ const MarketsScreen = ({ navigation }) => {
     return (
         <FlatList
             data={markets}
-            renderItem={renderEventItem}
+            renderItem={renderMarketItem}
             keyExtractor={(item) => item.id.toString()}
         />
     )

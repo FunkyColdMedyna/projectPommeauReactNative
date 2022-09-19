@@ -11,6 +11,8 @@ import ContactScreen from './ContactScreen';
 import EventsScreen from './EventsScreen';
 import ArticlesScreen from './ArticlesScreen';
 import ArticleInfoScreen from './ArticleInfoScreen';
+import MarketInfoScreen from './MarketInfoScreen';
+import MarketsScreen from './MarketsScreen';
 import { Icon } from 'react-native-elements';
 import Apple9 from '../assets/images/apple9.png';
 import { useDispatch } from 'react-redux';
@@ -139,6 +141,36 @@ const ArticlesNavigator = () => {
                 component={ArticleInfoScreen}
                 options={({ route }) => ({
                     title: route.params.article.name
+                })}
+            /> 
+        </Stack.Navigator>
+    );
+};
+
+const MarketNavigator = () => {
+    const Stack = createStackNavigator();
+    return(
+        <Stack.Navigator screenOptions={screenOptions}>
+            <Stack.Screen 
+                name='Market'
+                component={MarketsScreen}
+                options={({ navigation }) => ({
+                    title: 'Market',
+                    headerLeft: () => (
+                        <Icon
+                            name='coffee'
+                            type='font-awesome'
+                            iconStyle={styles.stackIcon}
+                            onPress={() => navigation.toggleDrawer()}
+                        />
+                    )
+                })}
+            />
+             <Stack.Screen 
+                name= 'MarkteInfo'
+                component={MarketInfoScreen}
+                options={({ route }) => ({
+                    title: route.params.market.name
                 })}
             /> 
         </Stack.Navigator>
@@ -283,6 +315,22 @@ useEffect(() => {
                         drawerIcon: ({ color }) => (
                             <Icon
                                 name='newspaper-o'
+                                type='font-awesome'
+                                size={24}
+                                iconStyle={{ width: 24 }}
+                                color={color}
+                            />
+                        )
+                    }}
+                />
+                <Drawer.Screen 
+                    name='Market'
+                    component={MarketNavigator}
+                    options={{
+                        title: 'Market',
+                        drawerIcon: ({ color }) => (
+                            <Icon
+                                name='coffee'
                                 type='font-awesome'
                                 size={24}
                                 iconStyle={{ width: 24 }}
