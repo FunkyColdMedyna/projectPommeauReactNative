@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
-import RenderArticle from '../features/articles/RenderArticle';
+import RenderMarket from '../features/market/RenderMarket';
 import { COMMENTS } from '../shared/COMMENTS'; 
 
 const MarketInfoScreen = ({ route }) => {
@@ -34,7 +34,7 @@ const MarketInfoScreen = ({ route }) => {
             }}
             ListHeaderComponent={
                 <>
-                    <RenderArticle 
+                    <RenderMarket
                         market={market} 
                         isFavorite={favorite}
                         markFavorite={() => setFavorite(true)}

@@ -167,7 +167,7 @@ const MarketNavigator = () => {
                 })}
             />
              <Stack.Screen 
-                name= 'MarkteInfo'
+                name= 'MarketInfo'
                 component={MarketInfoScreen}
                 options={({ route }) => ({
                     title: route.params.market.name
