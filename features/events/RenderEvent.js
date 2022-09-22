@@ -21,6 +21,11 @@ const RenderEvent = (props) => {
                     </View>
                 </Card.Image>
                 <Text style={{ margin: 20 }}>{event.description}</Text>
+                <Button
+  onPress={ReserveSpot}
+  title="Reserve Your Spot"
+  color="#841584"
+/>
                 <Icon
                     name={props.isFavorite ? "heart" : "heart-o"}
                     type="font-awesome"
