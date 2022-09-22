@@ -22,6 +22,11 @@ const RenderMarket = (props) => {
                     </View>
                 </Card.Image>
                 <Text style={{ margin: 20 }}>{market.description}</Text>
+                <Button
+  onPress={BuyNow}
+  title="Buy Now"
+  color="#841584"
+/>
                 <Icon
                     name={props.isFavorite ? "heart" : "heart-o"}
                     type="font-awesome"
